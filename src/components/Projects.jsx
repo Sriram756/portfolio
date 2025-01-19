@@ -65,7 +65,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="relative  h-screen w-full overflow-y-hidden bg-zinc-300 font-[Montserrat] text-white">
+    <div className="relative  h-screen w-full overflow-y-hidden bg-zinc-300 font-[Montserrat] text-white opacity-1">
       {/* Scroll area */}
       <div className="scroll-area h-[200px] "></div>
 

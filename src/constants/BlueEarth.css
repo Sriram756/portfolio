@@ -1,29 +1,19 @@
-/* html {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  font-family: "Lato", sans-serif;
-  color: #fff;
-  background: radial-gradient(ellipse at bottom, #0c1116 0%, #090a0f 100%);
-} */
+
 
 .horizon {
   position: absolute;
-  width: 160%;
+  width: 100%;
   height: 70%;
   border-radius: 100% / 100%;
   background: #038bff;
   filter: blur(30px);
-  left: 50%;
-  bottom: -10%;
+  left: 75%;
+  top: 60%;
   margin-left: -80%;
 }
 
 .horizon:before {
-  content: " ";
-  position: absolute;
-  width: 81.25%;
-  height: 70%;
+  
   border-radius: 100% / 100%;
   background: #51afff;
   filter: blur(30px);
@@ -32,10 +22,7 @@
 }
 
 .horizon:after {
-  content: " ";
-  position: absolute;
-  width: 32%;
-  height: 20%;
+  
   border-radius: 650px / 350px;
   background: #b0daff;
   filter: blur(30px);
@@ -50,30 +37,25 @@
   background: #215496;
   filter: blur(200px);
   opacity: 0.7;
-  top: -20%;
+  top: -30%;
 }
 
 #earth {
   position: absolute;
-  width: 200%;
-  height: 100%;
-  background: black;
-  border-radius: 100% / 100%;
-  left: 50%;
-  bottom: -40%;
-  margin-left: -100%;
-}
-
-#earth:before {
-  content: " ";
-  position: absolute;
   width: 100%;
-  height: 100%;
-  border-radius: 100% / 100%;
-  box-shadow: inset 0px 0px 62px 20px rgba(60, 105, 138, 0.85);
+  height: 60%;
+  background: black;
+  border-radius: 100% / 50%;
+  left: 100%;
+  top:65% ;
+  margin-left: -100%;
+  box-shadow: inset 0px 0px 62px 20px rgba(3, 5, 5, 0.85);
+  
 }
 
-#earth:after {
+
+
+/* #earth:after {
   content: " ";
   position: absolute;
   width: 100%;
@@ -81,14 +63,15 @@
   border-radius: 100% / 100%;
   background: linear-gradient(
     to bottom,
-    rgb(0, 0, 0) 0%,
-    rgb(0, 0, 0) 50%,
-    rgba(0, 34, 61, 255) 60%
+    rgb(202, 42, 42) 0%,
+    rgb(232, 230, 80)50%
+    rgb(82, 81, 60) 60%,
+    
   );
-}
+} */
 
 #title {
-  position: absolute;
+  /* position: absolute; */
   font-weight: 300;
   top: 30%;
   left: 0;

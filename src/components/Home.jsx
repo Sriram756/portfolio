@@ -35,8 +35,8 @@ const Home = () => {
       gsap.from(text.lines, {
         scrollTrigger: {
           trigger: el,
-          start: isDesktop ? "left 10%" : "100px center",
-          end: isDesktop ? "left 5%" : "300px top",
+          start: isDesktop ? "left 90%" : "100px center",
+          end: isDesktop ? "left 50%" : "300px top",
           scrub: 1,
           markers: true,
         },
@@ -54,7 +54,7 @@ const Home = () => {
   // Step 2: Update the window size when the window is resized
 
   return (
-    <div className="relative">
+    <div className="relative bg-black">
       <div
         id="home"
         ref={ref}
@@ -92,7 +92,7 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-      <div className=" mt-[-167vh]  md:h-[200vh] h-[200vh]  bg-black  ">
+      <div className=" mt-[-130vh] py-20 h-full  bg-black  ">
         <div className="horizon">
           <div class="glow"></div>
         </div>
@@ -103,10 +103,11 @@ const Home = () => {
         >
           ABOUT
         </div>
+
         <motion.div
           id="about"
           style={isDesktop ? { x: imageX } : { x: 0, y: imageY }}
-          className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full max-w-[90%] gap-3 rounded-[60px]  forGlass p-10 shadow-2xl  top-[130px] md:top-[110px]   md:sticky   "
+          className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full max-w-[90%] gap-3 rounded-[60px]  forGlass p-10 shadow-2xl  top-[130px] md:top-[110px]    "
         >
           <img
             src={profile}
