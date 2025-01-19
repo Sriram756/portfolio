@@ -1,6 +1,6 @@
 // for home page
 import dp from "/images/Profile.png";
-import lap from "/images/LapBg.png";
+import lap from "/images/LapBg.webp";
 import logo from "/images/logo.png";
 
 export const profile = dp;
