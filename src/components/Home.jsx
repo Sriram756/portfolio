@@ -38,7 +38,7 @@ const Home = () => {
           start: isDesktop ? "left 90%" : "100px center",
           end: isDesktop ? "left 50%" : "300px top",
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
         opacity: 0,
         duration: 0.3,

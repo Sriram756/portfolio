@@ -49,9 +49,9 @@ const Services = () => {
 
   return (
     <div className="bg-gray-300 relative">
-      <div className="flex flex-row max-w-[1080px] mx-auto relative">
+      <div className="flex flex-row overflow- max-w-[1080px] mx-auto relative">
         {/* Sticky Part */}
-        <div className="flex-1  ml-2 sticky top-0 h-screen  flex items-center justify-center">
+        <div className="flex-1  ml-2 sticky  top-0 h-screen flex items-center justify-center">
           {serviceDetails.map((item, index) => (
             <div
               key={index}

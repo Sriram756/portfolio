@@ -19,7 +19,7 @@ import React from "react";
 const Orbit = () => {
   return (
     <section className="w-full  h-screen flex justify-center relative bg-gradient-to-b from-gray-200 to-gray-50">
-      <div className="  relative md:static ">
+      <div className="  relative md:static px-10">
         <ul className="orbit-wrap ">
           <li className="orbit-center">
             <div className="orbit-center__icon">

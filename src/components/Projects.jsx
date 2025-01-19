@@ -26,7 +26,7 @@ const Projects = () => {
           end: "500px center",
           scrub: 5,
           toggleActions: "play none none restart",
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -46,7 +46,7 @@ const Projects = () => {
           start: "top 20%",
           end: "500px 70%",
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
