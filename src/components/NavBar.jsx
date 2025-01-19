@@ -14,7 +14,7 @@ const NavBar = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="shadow flex justify-between items-center w-full h-18 px-4 text-black bg-slate-50 py-3 fixed top-0 left-0 z-40">
+    <div className=" flex justify-between items-center w-full h-18 px-10 text-black bg-slate-50 py-3 fixed top-0 left-0 z-40">
       {/* logo section */}
       <div className="font-bold text-2xl cursor-pointer flex  gap-1">
         <img src={navLogo} className="w-10 h-10" />
