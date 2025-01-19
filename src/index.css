@@ -314,7 +314,7 @@ ul[class^="ring"] li {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x:center;
+  background-position-x:;
   
 }
 .imgBox{

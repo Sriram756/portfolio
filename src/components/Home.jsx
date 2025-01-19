@@ -58,7 +58,7 @@ const Home = () => {
       <div
         id="home"
         ref={ref}
-        className="relative  z-10 h-[200vh]  overflow-clip"
+        className="relative w-screen z-10 h-[200vh]  overflow-hidden"
       >
         <motion.div
           style={{ scale: scale }}
