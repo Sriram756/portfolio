@@ -72,7 +72,7 @@ const Home = () => {
           >
             <div className="flex h-full flex-col ml-12 mt-20">
               <p className="mb-5 max-w-[12ch] md:ml-32  text-6xl font-bold leading-[0.85] md:my-2 md:text-[80px] xl:text-[128px]">
-                <h2 className=" shad">SRIRA</h2>
+                <h2 className=" shad">SRIRAM</h2>
                 <TypeAnimation
                   sequence={[
                     "FrontEnd Dev",
