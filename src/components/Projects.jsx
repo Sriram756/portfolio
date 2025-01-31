@@ -48,7 +48,7 @@ const Parallax = () => {
           <div className="absolute bottom-0 left-0 h-[2px] w-full bg-black z-20" />
           <div data-parallax-layers className="relative h-full">
             <img
-              src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795be09b462b2e8ebf71_osmo-parallax-layer-3.webp"
+              src="https://i.imgur.com/4nwlFzr.jpeg"
               loading="eager"
               alt="Layer 1"
               data-parallax-layer="1"

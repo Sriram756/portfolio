@@ -54,18 +54,18 @@ const Home = () => {
   // Step 2: Update the window size when the window is resized
 
   return (
-    <div className="relative bg-black w-screen">
+    <div className="relative bg-black ">
       <div
         id="home"
         ref={ref}
-        className="relative w-screen z-10 h-[200vh]  overflow-hidden"
+        className="relative z-10 h-[200vh]  overflow-hidden"
       >
         <motion.div
           style={{ scale: scale }}
-          className=" sticky left-0 top-0 grid h-screen origin-[82%_60%]  md:origin-[67%_85%]  "
+          className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[67%_85%]  "
         >
           <div
-            className=" flex lapCs p-12 "
+            className=" flex lapCs  p-12 "
             style={{
               backgroundImage: `url(${lapbg})`,
             }}
