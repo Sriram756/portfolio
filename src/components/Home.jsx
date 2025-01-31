@@ -35,8 +35,8 @@ const Home = () => {
       gsap.from(text.lines, {
         scrollTrigger: {
           trigger: el,
-          start: isDesktop ? "left 90%" : "100px center",
-          end: isDesktop ? "left 50%" : "300px top",
+          start: isDesktop ? "left 90%" : "0px center",
+          end: isDesktop ? "left 50%" : "200px bottom",
           scrub: 1,
           // markers: true,
         },
@@ -48,13 +48,13 @@ const Home = () => {
   }, [isDesktop]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 40]);
   const imageX = useTransform(scrollYProgress, [0, 1], ["70%", "0%"]);
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const zoomy = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   // Step 2: Update the window size when the window is resized
 
   return (
-    <div className="relative bg-black">
+    <div className="relative bg-black w-screen">
       <div
         id="home"
         ref={ref}
@@ -62,7 +62,7 @@ const Home = () => {
       >
         <motion.div
           style={{ scale: scale }}
-          className=" sticky left-0 top-0 grid h-screen origin-[75%_60%]  md:origin-[67%_85%]  "
+          className=" sticky left-0 top-0 grid h-screen origin-[82%_60%]  md:origin-[67%_85%]  "
         >
           <div
             className=" flex lapCs p-12 "
@@ -92,14 +92,14 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-      <div className=" mt-[-130vh] py-20 h-full  bg-black  ">
+      <div className="mt-[-130vh] py-20 h-full mb-10  bg-black  ">
         <div className="horizon">
           <div class="glow"></div>
         </div>
         <div id="earth"></div>
         <div
           id="title"
-          className=" md:mt-[30px] mt-[40px] md:text-[130px] text-[60px]"
+          className=" md:mt-[30px] mt-[10px] md:text-[130px] text-[60px]"
         >
           ABOUT
         </div>
@@ -107,7 +107,7 @@ const Home = () => {
         <motion.div
           id="about"
           style={isDesktop ? { x: imageX } : { x: 0, y: imageY }}
-          className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full max-w-[90%] gap-3 rounded-[60px]  forGlass p-10 shadow-2xl  top-[130px] md:top-[110px]    "
+          className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full  max-w-[90%] gap-3 rounded-[60px]  forGlass px-10 shadow-2xl     "
         >
           <img
             src={profile}
@@ -115,7 +115,7 @@ const Home = () => {
             width={100}
             className="md:w-[300px] md:h-[300px] w-[200px] h-[200px] profile-img"
           />
-          <p className="reveal text-2xl text-white">
+          <p className="reveal text-sm md:text-2xl text-white">
             As a junior Ux/UI designer I get to my love for technology with my
             passion for design and art.I enjoy using my creativity and
             problem-solving skills to create digital experiences that not only

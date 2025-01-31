@@ -42,11 +42,11 @@
 
 #earth {
   position: absolute;
-  width: 100%;
+  width: 120%;
   height: 60%;
   background: black;
   border-radius: 100% / 50%;
-  left: 100%;
+  left: 90%;
   top:65% ;
   margin-left: -100%;
   box-shadow: inset 0px 0px 62px 20px rgba(3, 5, 5, 0.85);

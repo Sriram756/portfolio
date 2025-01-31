@@ -1,173 +1,94 @@
 import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { aurora, cloudMask, fog, hills, man, tree } from "../utils";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const Projects = () => {
+const Parallax = () => {
   useEffect(() => {
-    // Preload all images
-    const preloadImages = [aurora, cloudMask, fog, hills, man, tree];
-    preloadImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-  useEffect(() => {
-    // Define responsive GSAP animations
-    const mm = gsap.matchMedia();
+    // Register GSAP Plugins
+    gsap.registerPlugin(ScrollTrigger);
 
-    mm.add("(min-width: 768px)", () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".scroll-area",
-          start: "100px 20%",
-          end: "500px center",
-          scrub: 5,
-          toggleActions: "play none none restart",
-          // markers: true,
-        },
+    // Parallax Layers
+    document
+      .querySelectorAll("[data-parallax-layers]")
+      .forEach((triggerElement) => {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: "0% 0%",
+            end: "100% 0%",
+            scrub: 1,
+          },
+        });
+        const layers = [
+          { layer: "1", yPercent: 70 },
+          { layer: "2", yPercent: 55 },
+          { layer: "3", yPercent: 40 },
+          { layer: "4", yPercent: 10 },
+        ];
+        layers.forEach((layerObj, idx) => {
+          tl.to(
+            triggerElement.querySelectorAll(
+              `[data-parallax-layer="${layerObj.layer}"]`
+            ),
+            {
+              yPercent: layerObj.yPercent,
+              ease: "none",
+            },
+            idx === 0 ? undefined : "<"
+          );
+        });
       });
-
-      tl.fromTo(".sky", { y: 0 }, { y: -600 }, 0)
-        .fromTo(".cloud1", { y: 100 }, { y: -1000 }, 0)
-        .fromTo(".cloud2", { y: -100 }, { y: -500 }, 0)
-        .fromTo(".cloud3", { y: -50 }, { y: -650 }, 0)
-        .fromTo(".mount-bg", { y: -90 }, { y: -600 }, 0)
-        .fromTo(".mount-mg", { y: -90 }, { y: -550 }, 0)
-        .fromTo(".mount-fg", { y: -120 }, { y: -600 }, 0);
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".scroll-area",
-          start: "top 20%",
-          end: "500px 70%",
-          scrub: 1,
-          // markers: true,
-        },
-      });
-
-      tl.fromTo(".sky", { y: 0 }, { y: -50 }, 0)
-        .fromTo(".cloud1", { y: 250 }, { y: -400 }, 0)
-        .fromTo(".cloud2", { y: -50 }, { y: -250 }, 0)
-        .fromTo(".cloud3", { y: -25 }, { y: -325 }, 0)
-        .fromTo(".mount-bg", { y: -5 }, { y: -50 }, 0)
-        .fromTo(".mount-mg", { y: -3 }, { y: -125 }, 0)
-        .fromTo(".mount-fg", { y: 60 }, { y: -300 }, 0);
-    });
-
-    return () => {
-      mm.revert();
-    };
   }, []);
 
   return (
-    <div className="relative  h-screen w-full overflow-y-hidden bg-zinc-300 font-[Montserrat] text-white opacity-1">
-      {/* Scroll area */}
-      <div className="scroll-area h-[200px] "></div>
-
-      {/* Main SVG area */}
-      <main
-        className="absolute
-       top-0 left-1/2 w-full max-w-[1200px] transform -translate-x-1/2 sm:max-w-full"
-      >
-        <svg
-          viewBox="0 0 1200 800"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet"
-          className="w-full h-full"
-        >
-          <mask id="mask-text">
-            <g className="cloud1">
-              <rect fill="#fff" width="100%" height="801" y="799" />
-              <image
-                href={cloudMask}
-                width="1200"
-                height="800"
-                alt="Cloud Mask"
-              />
-            </g>
-          </mask>
-
-          {/* Background Elements */}
-          <image
-            className="sky"
-            href={aurora}
-            width="1200"
-            height="800"
-            alt="Sky"
-          />
-          <image
-            className="mount-bg"
-            href={hills}
-            width="1200"
-            height="800"
-            alt="Mount Background"
-          />
-          <image
-            className="cloud2"
-            href={fog}
-            width="1200"
-            height="800"
-            alt="Cloud Layer 2"
-          />
-          <image
-            className="mount-mg"
-            href={tree}
-            width="1200"
-            height="800"
-            alt="Mount Midground"
-          />
-          <image
-            className="mount-fg"
-            href={man}
-            width="1200"
-            height="800"
-            x="-20%"
-            alt="Mount Foreground"
-          />
-
-          <text
-            x="50%"
-            y="30%"
-            textAnchor="middle"
-            fill="#fff"
-            style={{ fontSize: "clamp(50px, 3vw, 32px)", fontWeight: "bold" }}
-          >
-            Developer with Designer Eye
-          </text>
-
-          <g mask="url(#mask-text)">
-            <defs>
-              <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#BCC8C6" />
-                <stop offset="100%" stop-color="#F8FAFC" />
-              </linearGradient>
-            </defs>
-            <rect
-              fill="url(#gradient)"
-              // fill="#B9BBB6"
-              width="100%"
-              height="100%"
+    <div className="relative w-full h-full overflow-hidden">
+      {/* Parallax Header Section */}
+      <section className="relative flex items-center justify-center min-h-screen px-8">
+        <div className="absolute inset-0 h-[120%]">
+          <div className="absolute bottom-0 left-0 h-[2px] w-full bg-black z-20" />
+          <div data-parallax-layers className="relative h-full">
+            <img
+              src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795be09b462b2e8ebf71_osmo-parallax-layer-3.webp"
+              loading="eager"
+              alt="Layer 1"
+              data-parallax-layer="1"
+              className="absolute w-full h-[117.5%] object-cover top-[-17.5%]"
             />
-
-            <text
-              x="50%"
-              y="30%"
-              textAnchor="middle"
-              fill="#000000"
-              style={{ fontSize: "clamp(50px, 3vw, 32px)", fontWeight: "bold" }}
+            <img
+              src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795b4d5ac529e7d3a562_osmo-parallax-layer-2.webp"
+              loading="eager"
+              alt="Layer 2"
+              data-parallax-layer="2"
+              className="absolute w-full h-[117.5%] object-cover top-[-17.5%]"
+            />
+            <div
+              data-parallax-layer="3"
+              className="absolute inset-0 flex items-center justify-center"
             >
-              Designer with Developer Mind
-            </text>
-          </g>
-        </svg>
-      </main>
+              <h2 className="font-pp-neue text-[11vw] font-extrabold text-center leading-none">
+                Developer with Designer' Eye
+              </h2>
+            </div>
+            <img
+              src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795bb5aceca85011ad83_osmo-parallax-layer-1.webp"
+              loading="eager"
+              alt="Layer 3"
+              data-parallax-layer="4"
+              className="absolute w-full h-[117.5%] object-cover top-[-17.5%]"
+            />
+          </div>
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-black via-transparent to-transparent z-30" />
+      </section>
+
+      {/* Parallax Content Section */}
+      <section className="relative flex items-center justify-center min-h-screen px-8 bg-black">
+        <h2 className="font-pp-neue text-white text-[11vw] font-extrabold text-center leading-none">
+          Designer with Developer's Mind
+        </h2>
+      </section>
     </div>
   );
 };
 
-export default Projects;
+export default Parallax;

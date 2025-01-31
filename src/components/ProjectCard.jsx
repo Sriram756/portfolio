@@ -5,7 +5,7 @@ const ProjectCard = () => {
   return (
     <div
       name="project"
-      className=" top-0 bg-gradient-to-b from-gray-50 to-gray-300 text-white md:h-full "
+      className=" top-0 bg-gradient-to-b from-gray-950 to-slate-900 text-white md:h-full "
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
         <div className="pb-8">

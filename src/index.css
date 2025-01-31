@@ -25,13 +25,13 @@
 
 body {
   color: black;
-  width: 100dvw;
+  width: 100%;
   overflow-x: hidden;
   height: 100%;
   background: rgb(255, 255, 255);
   border-color: black;
   user-select: none;
-  overflow-x: hidden;
+  
 }
 
 canvas {
@@ -125,7 +125,7 @@ canvas {
 }
 @media (max-width: 768px) {
   .orbit-wrap {
-    font-size: 1em;
+    font-size: 0.7em;
   }
 }
 .orbit-wrap > li {
@@ -322,7 +322,7 @@ ul[class^="ring"] li {
  box-shadow: -22px 12px 20px -6px rgba(0,0,0,0.6);
 -webkit-box-shadow: -22px 12px 20px -6px rgba(0,0,0,0.6);
 -moz-box-shadow: -22px 12px 20px -6px rgba(0,0,0,0.6);
- border: 7px solid #aba2a1;
+ border: 2px solid #aba2a1;
  border-radius: 6px;
 }
 

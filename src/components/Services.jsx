@@ -7,40 +7,24 @@ const Services = () => {
     const reveal = () => {
       const revealers = document.querySelectorAll(".text");
       const images = document.querySelectorAll(".serviceImg");
-      const revealPoint = window.innerHeight / 2;
+      const revealPoint = window.innerHeight * 0.2; // Adjusted for better timing
 
       revealers.forEach((text, i) => {
-        const { top, bottom } = text.getBoundingClientRect();
+        const rect = text.getBoundingClientRect();
+        const isVisible =
+          rect.top < window.innerHeight - revealPoint &&
+          rect.bottom > revealPoint;
 
-        if (top < window.innerHeight - revealPoint) {
-          gsap.to(images[i], {
-            opacity: 1,
-            zIndex: 1,
-            duration: 0.5,
-            ease: "power2.out",
-          });
-        } else {
-          gsap.to(images[i], {
-            opacity: 0,
-
-            duration: 0.5,
-            ease: "power2.out",
-          });
-        }
-
-        if (bottom < 0 + revealPoint) {
-          gsap.to(images[i], {
-            opacity: 0,
-
-            duration: 0.5,
-            ease: "power2.out",
-          });
-        }
+        gsap.to(images[i], {
+          opacity: isVisible ? 1 : 0,
+          zIndex: isVisible ? 1 : -1,
+          duration: 0.3,
+        });
       });
     };
 
     window.addEventListener("scroll", reveal);
-    reveal(); // Trigger on mount to initialize
+    reveal(); // Trigger once on mount
 
     return () => {
       window.removeEventListener("scroll", reveal);
@@ -48,35 +32,37 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="bg-gray-300 relative">
-      <div className="flex flex-row overflow- max-w-[1080px] mx-auto relative">
-        {/* Sticky Part */}
-        <div className="flex-1  ml-2 sticky  top-0 h-screen flex items-center justify-center">
+    <div className="bg-black min-h-screen">
+      <div className="flex  flex-row  w-screen relative">
+        {/* Sticky Image Section */}
+        <div className="w-1/2 sticky md:top-0 top-1/4 h-screen flex items-center justify-center">
           {serviceDetails.map((item, index) => (
             <div
               key={index}
-              className="imgBox  absolute w-[250px] h-[200px] md:w-[500px] md:h-[300px] bg-black flex items-center justify-center"
+              className="imgBox absolute  w-10/12 h-1/3 md:w-96 md:h-64 bg-black flex items-center justify-center"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="serviceImg  w-full h-full opacity-0 "
+                className="serviceImg w-full h-full opacity-0 transition-opacity duration-500"
               />
             </div>
           ))}
         </div>
 
         {/* Scrollable Text Section */}
-        <div className="flex-1">
+        <div className="w-1/2  py-12">
           {serviceDetails.map((item, index) => (
             <div
               key={index}
-              className="text h-screen flex flex-col justify-center px-4"
+              className="text h-screen w-full flex flex-col justify-center"
             >
-              <h2 className="md:text-5xl text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500 font-bold mb-4">
+              <h2 className="text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500 mb-4">
                 {item.title}
               </h2>
-              <p>{item.description}</p>
+              <p className="text-base font-normal md:text-lg text-white">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
