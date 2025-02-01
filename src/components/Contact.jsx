@@ -7,14 +7,16 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full h-screen bg-gradient-to-b from-slate-900 to-slate-600 text-white relative"
+      className="w-full pt-6 h-full bg-gradient-to-b from-slate-900 to-slate-600 text-white relative"
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div>
           <p className="text-4xl border-b-4 inline font-bold border-gray-500">
             Contact
           </p>
-          <p className="py-6">submit the below form to get touch with me</p>
+          <p className="py-6 text-xl font-medium">
+            submit the below form to get touch with me
+          </p>
         </div>
         <div className="flex justify-center items-center">
           <form action="" className="flex flex-col w-full md:w-1/2">

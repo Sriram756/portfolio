@@ -38,7 +38,7 @@ export const backEnd = back;
 import p1 from "/images/apple demo.png";
 import p2 from "/images/Cover.png";
 import p3 from "/images/project3.jpeg";
-import p4 from "/images/project4.jpeg";
+import p4 from "/images/LitHub.png";
 import p5 from "/images/Movie Ticket.png";
 
 export const appleP1 = p1;

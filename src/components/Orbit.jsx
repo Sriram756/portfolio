@@ -18,7 +18,7 @@ import React from "react";
 
 const Orbit = () => {
   return (
-    <section className="w-full  h-screen flex justify-center relative bg-gradient-to-b from-slate-950 to-gray-950">
+    <section className="w-full  h-screen flex justify-center relative bg-gradient-to-b from-black to-gray-950">
       <div className="  relative md:static px-10">
         <ul className="orbit-wrap ">
           <li className="orbit-center">

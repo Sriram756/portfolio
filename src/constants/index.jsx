@@ -48,26 +48,34 @@ export const allProject = [
     src: appleP1,
     eref: "https://apple-sriram-designer.netlify.app/",
     name: "Apple Demo",
+    cate: "Front-End(react.js,tailwindcss,gsap)",
   },
   {
     id: 2,
     src: musicP2,
     eref: "https://www.behance.net/gallery/216540973/Lit-Music-Music-streaming-platform-Mobile-App",
+    name: "music streaming platform",
+    cate: "UI & UX(Figma)",
   },
   {
     id: 3,
     src: Project3,
     eref: "https://www.bing.com/videos/riverview/relatedvideo?&q=SVG+Mask&&mid=5C01FB45EB7ECE8F78FD5C01FB45EB7ECE8F78FD&mmscn=mtsc&aps=21&FORM=VRDGAR",
+    cate: "UI & UX(Figma)",
   },
   {
     id: 4,
     src: Project4,
     eref: "https://www.figma.com/login",
+    name: "movie streaming platform",
+    cate: "UI & UX(Figma)",
   },
   {
     id: 5,
     src: ticketP5,
     eref: "https://www.behance.net/gallery/215675113/Movie-Ticket-Booking-App-Mobile-View",
+    name: "Movie Ticket Booking App",
+    cate: "UI & UX(Figma)",
   },
 ];
 

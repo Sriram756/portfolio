@@ -46,7 +46,7 @@ const Home = () => {
       });
     });
   }, [isDesktop]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 40]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 30]);
   const imageX = useTransform(scrollYProgress, [0, 1], ["70%", "0%"]);
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const zoomy = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
@@ -62,16 +62,16 @@ const Home = () => {
       >
         <motion.div
           style={{ scale: scale }}
-          className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[67%_85%]  "
+          className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[66%_59%] lg:origin-[66%_70%] xl:origin-[66%_85%]"
         >
           <div
-            className=" flex lapCs  p-12 "
+            className=" flex lapCs  p-12 h-full "
             style={{
               backgroundImage: `url(${lapbg})`,
             }}
           >
             <div className="flex h-full flex-col md:ml-12 ml-0 mt-20">
-              <p className="mb-5 max-w-[12ch] md:ml-32 ml-1 text-6xl font-bold leading-[0.85] md:my-2 md:text-[80px] xl:text-[128px]">
+              <p className="mb-5 max-w-[12ch] md:ml-32 ml-1 text-6xl font-bold leading-[0.85] md:my-2 md:text-[80px] xl:text-[128px] lg:bg-red-600 md:bg-green-400 xl:bg-yellow-400">
                 <h2 className=" shad">SRIRAM</h2>
                 <TypeAnimation
                   sequence={[

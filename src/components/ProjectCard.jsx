@@ -5,38 +5,47 @@ const ProjectCard = () => {
   return (
     <div
       name="project"
-      className=" top-0 bg-gradient-to-b from-gray-950 to-slate-900 text-white md:h-full "
+      className="bg-gradient-to-b from-gray-950 to-slate-900 text-white min-h-screen"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
+      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full">
+        {/* Section Heading */}
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500 text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500">
-            portfolio
+          <p className="text-2xl md:text-4xl font-bold inline border-b-4 border-gray-500 text-transparent bg-clip-text bg-white px-5">
+            Portfolio
           </p>
-          <p>check out some of my work</p>
+          <p className="mt-6 font-medium text-xl">Check out some of my work</p>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {allProject.map(({ id, src, eref, name }) => (
+
+        {/* Project Grid */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-4 px-6 sm:px-0">
+          {allProject.map(({ id, src, eref, name, cate }) => (
             <div
               key={id}
-              className="shadow-md relative shadow-gray-600 rounded-lg"
+              className="shadow-md min-h-[350px] md:min-h-[500px] relative shadow-gray-600 rounded-lg overflow-hidden"
             >
+              {/* Project Image */}
               <img
                 src={src}
-                alt=""
-                className="rounded-md duration-200 hover:scale-105 w-full h-2/3 "
+                alt={name} // Added meaningful alt text
+                className="rounded-md duration-200 hover:scale-105 w-full h-[60%] object-fill"
               />
-              <div className="flex flex-wrap items-center justify-center">
+
+              {/* Project Details */}
+              <div className="flex flex-col items-center justify-center p-4">
                 <button
-                  className="w-1/2 flex-1 px-6 py-3 m-4 duration-200 hover:scale-105 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500"
-                  onClick={() => window.open(eref, "_blank")}
+                  className="w-full h-[40%] flex-1 px-6 py-2 md:mt-2 text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400 hover:scale-105 transition-transform"
+                  onClick={() =>
+                    window.open(eref, "_blank", "noopener noreferrer")
+                  }
                 >
-                  demo
+                  Visit Website
                 </button>
-                <button className="w-1/2 flex-1 px-6 py-3 m-4 duration-200 hover:scale-105 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500">
-                  code
-                </button>
-                <p className="text-center text-blue-600 text-lg font-bold ">
+
+                <p className="text-center text-blue-400 text-lg font-bold mt-2">
                   {name}
+                </p>
+                <p className="text-center text-wrap  text-blue-500 text-sm">
+                  {cate}
                 </p>
               </div>
             </div>
