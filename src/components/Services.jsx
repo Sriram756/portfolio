@@ -33,6 +33,9 @@ const Services = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <p className="text-xl md:text-4xl font-bold inline border-b-4 border-gray-500 text-transparent bg-clip-text bg-white px-5 md:ml-14">
+        Services
+      </p>
       <div className="flex  flex-row  w-screen relative">
         {/* Sticky Image Section */}
         <div className="w-1/2 sticky md:top-0 top-1/4 h-screen flex items-center justify-center">
@@ -60,7 +63,7 @@ const Services = () => {
               <h2 className="text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500 mb-4">
                 {item.title}
               </h2>
-              <p className="text-base font-normal md:text-lg text-white">
+              <p className="text-base font-light md:text-lg text-white">
                 {item.description}
               </p>
             </div>

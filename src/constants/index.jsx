@@ -18,7 +18,7 @@ export const serviceDetails = [
   {
     title: "UI UX Designing",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a neque mattis, ultricies ante nec, volutpat lacus. Curabitur ac nisl sed tellus volutpat tincidunt ut ut tortor. Vestibulum congue enim velit.",
+      "specializing in crafting user-friendly interfaces and engaging experiences. My process involves user research, wireframing, prototyping, and usability testing to create designs that are both aesthetically pleasing and highly functional. I have experience with tools like Figma, Adobe XD, and Sketch, and I stay updated with the latest design trends to enhance user satisfaction",
     image: uiux,
   },
   {
