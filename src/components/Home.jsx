@@ -22,6 +22,23 @@ const Home = () => {
     offset: ["start start", "end end"],
   });
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+  const [isLoading, SetIsLoading] = useState(true);
+
+  useEffect(() => {
+    const images = [lapbg]; // Add all image URLs here
+    let loadedImages = 0;
+
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedImages += 1;
+        if (loadedImages == images.length) {
+          SetIsLoading(false); // Hide loading screen when all images are loaded
+        }
+      };
+    });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 768);
@@ -52,80 +69,86 @@ const Home = () => {
   const zoomy = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   // Step 2: Update the window size when the window is resized
-
-  return (
-    <div className="relative bg-black ">
-      <div
-        id="home"
-        ref={ref}
-        className="relative z-10 h-[200vh]  overflow-hidden"
-      >
-        <motion.div
-          style={{ scale: scale }}
-          className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[66%_59%] lg:origin-[66%_70%] xl:origin-[66%_85%]"
-        >
-          <div
-            className=" flex lapCs  p-12 h-full "
-            style={{
-              backgroundImage: `url(${lapbg})`,
-            }}
-          >
-            <div className="flex h-full flex-col md:ml-12 ml-0 mt-20">
-              <p className="mb-5 max-w-[12ch] md:ml-32 ml-1 text-6xl font-bold leading-[0.85] md:my-2 md:text-[80px] xl:text-[128px]">
-                <h2 className=" shad">SRIRAM</h2>
-                <TypeAnimation
-                  sequence={[
-                    "FrontEnd Dev",
-                    1000,
-                    "UI-UX Designer",
-                    1000,
-                    "Video Editor",
-                    1000,
-                  ]}
-                  speed={50}
-                  repeat={Infinity}
-                  className="font-bold
-      text-gray-900 text-xl md:text-5xl"
-                />
-              </p>
-            </div>
-          </div>
-        </motion.div>
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-black text-white text-2xl">
+        Loading...
       </div>
-      <div className="mt-[-130vh] py-20 h-full relative overflow-x-hidden  bg-black  ">
-        <div className="horizon">
-          <div class="glow"></div>
-        </div>
-        <div id="earth"></div>
+    );
+  } else
+    return (
+      <div className="relative bg-black ">
         <div
-          id="title"
-          className=" md:mt-[30px] mt-[10px] md:text-[130px] text-[60px]"
+          id="home"
+          ref={ref}
+          className="relative z-10 h-[200vh]  overflow-hidden"
         >
-          ABOUT
+          <motion.div
+            style={{ scale: scale }}
+            className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[66%_59%] lg:origin-[66%_70%] xl:origin-[66%_85%]"
+          >
+            <div
+              className=" flex lapCs  p-12 h-full "
+              style={{
+                backgroundImage: `url(${lapbg})`,
+              }}
+            >
+              <div className="flex h-full flex-col md:ml-12 ml-0 mt-20">
+                <p className="mb-5 max-w-[12ch] md:ml-32 ml-1 text-6xl font-bold leading-[0.85] md:my-2 md:text-[80px] xl:text-[128px]">
+                  <h2 className=" shad">SRIRAM</h2>
+                  <TypeAnimation
+                    sequence={[
+                      "FrontEnd Dev",
+                      1000,
+                      "UI-UX Designer",
+                      1000,
+                      "Video Editor",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                    className="font-bold
+      text-gray-900 text-xl md:text-5xl"
+                  />
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
+        <div className="mt-[-130vh] py-20 h-full relative overflow-x-hidden  bg-black  ">
+          <div className="horizon">
+            <div class="glow"></div>
+          </div>
+          <div id="earth"></div>
+          <div
+            id="title"
+            className=" md:mt-[30px] mt-[10px] md:text-[130px] text-[60px]"
+          >
+            ABOUT
+          </div>
 
-        <motion.div
-          id="about"
-          style={isDesktop ? { x: imageX } : { x: 0, y: imageY }}
-          className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full  max-w-[90%] gap-3 rounded-[60px]  forGlass px-10 shadow-2xl     "
-        >
-          <img
-            src={profile}
-            alt="profile-img"
-            width={100}
-            className="md:w-[300px] md:h-[300px] w-[200px] h-[200px] profile-img"
-          />
-          <p className="reveal text-sm md:text-2xl text-white">
-            As a junior Ux/UI designer I get to my love for technology with my
-            passion for design and art.I enjoy using my creativity and
-            problem-solving skills to create digital experiences that not only
-            look great but also work seamlessly for the user . when I'm not
-            designing,
-          </p>
-        </motion.div>
+          <motion.div
+            id="about"
+            style={isDesktop ? { x: imageX } : { x: 0, y: imageY }}
+            className=" mx-auto flex justify-between md:flex-row flex-col items-center  h-fit w-full  max-w-[90%] gap-3 rounded-[60px]  forGlass px-10 shadow-2xl     "
+          >
+            <img
+              src={profile}
+              alt="profile-img"
+              width={100}
+              className="md:w-[300px] md:h-[300px] w-[200px] h-[200px] profile-img"
+            />
+            <p className="reveal text-sm md:text-2xl text-white">
+              As a junior Ux/UI designer I get to my love for technology with my
+              passion for design and art.I enjoy using my creativity and
+              problem-solving skills to create digital experiences that not only
+              look great but also work seamlessly for the user . when I'm not
+              designing,
+            </p>
+          </motion.div>
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default Home;
