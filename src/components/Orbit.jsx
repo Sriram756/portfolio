@@ -30,12 +30,20 @@ const Orbit = () => {
             <ul className="ring-0">
               <li>
                 <div>
-                  <FontAwesomeIcon icon={faInstagram} size="2xl" />
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    size="2xl"
+                    style={{ color: "#E1306C" }}
+                  />
                 </div>
               </li>
               <li>
                 <div>
-                  <FontAwesomeIcon icon={faFigma} size="2xl" />
+                  <FontAwesomeIcon
+                    icon={faFigma}
+                    size="2xl"
+                    style={{ color: "#1ABCFE" }}
+                  />
                 </div>
               </li>
               <li>
