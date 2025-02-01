@@ -66,7 +66,7 @@ export const allProject = [
   {
     id: 4,
     src: Project4,
-    eref: "https://www.figma.com/login",
+    eref: "https://litmoviestar.netlify.app/",
     name: "movie streaming platform",
     cate: "UI & UX(Figma)",
   },
