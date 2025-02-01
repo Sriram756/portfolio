@@ -62,10 +62,10 @@ const Home = () => {
       >
         <motion.div
           style={{ scale: scale }}
-          className=" sticky top-0 grid h-screen origin-[65%_60%]  md:origin-[66%_59%] lg:origin-[66%_70%] xl:origin-[66%_85%]"
+          className=" sticky top-18 grid h-screen  origin-[65%_60%]  md:origin-[66%_59%] lg:origin-[66%_70%] xl:origin-[66%_85%]"
         >
           <div
-            className=" flex lapCs  p-12 h-full "
+            className=" flex lapCs  p-12 h-screen "
             style={{
               backgroundImage: `url(${lapbg})`,
             }}
