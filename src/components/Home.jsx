@@ -92,7 +92,7 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-      <div className="mt-[-130vh] py-20 h-full relative overflow-x-hidden  bg-black  ">
+      <div className="mt-[-130vh] py-20 h-full relative overflow-hidden  bg-black  ">
         <div className="horizon">
           <div class="glow"></div>
         </div>
