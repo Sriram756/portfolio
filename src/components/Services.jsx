@@ -63,7 +63,7 @@ const Services = () => {
               <h2 className="text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-500 mb-4">
                 {item.title}
               </h2>
-              <p className="text-base font-light md:text-lg text-white">
+              <p className="text-base font-light md:text-2xl text-white">
                 {item.description}
               </p>
             </div>

@@ -48,7 +48,7 @@ export const allProject = [
     src: appleP1,
     eref: "https://apple-sriram-designer.netlify.app/",
     name: "Apple Demo",
-    cate: "Front-End(react.js,tailwindcss,gsap)",
+    cate: "Front-End(react.js,tailwindcss,gsap, three.js)",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ export const allProject = [
     src: Project4,
     eref: "https://litmoviestar.netlify.app/",
     name: "movie streaming platform",
-    cate: "UI & UX(Figma)",
+    cate: "Front-End(Figma,React.js, Gsap, Firestore, Firebase authentication,tailwindcss)",
   },
   {
     id: 5,
